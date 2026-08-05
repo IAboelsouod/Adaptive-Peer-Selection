@@ -1,0 +1,42 @@
+dataset:
+  name: fmnist  # fmnist | mnist | cifar10
+
+federation:
+  num_clients: 50
+  num_rounds: 50
+  local_epochs: 2
+  fraction_fit: 1.0
+
+hierarchy:
+  global_sync_every: 2  # H — global sync every H rounds (Abad et al. Algorithm 2)
+  num_groups: 5         # fixed groups for hier_static baseline only
+
+data:
+  alpha: 0.1            # Dirichlet concentration — lower = stronger label skew
+  num_latent_groups: 3
+  partition_scheme: dirichlet_latent  # dirichlet_latent | dirichlet_only
+
+model:
+  name: cnn_fmnist  # cnn_fmnist | cnn_mnist | cnn_cifar10
+
+peers:
+  similarity_source: last_layer  # last_layer | full
+  threshold: 0.3
+  top_k: 10
+  community_method: louvain  # louvain | greedy_modularity | spectral_k
+  recluster_every: 1
+  warmup_rounds: 3
+  hysteresis: 0.5  # fraction of clients that must stay in group to accept reassignment
+
+training:
+  lr: 0.01
+  batch_size: 32
+  optimizer: sgd
+  local_optimizer: fedavg  # fedavg | fedprox
+  fedprox_mu: 0.01
+
+experiment:
+  strategy: flat  # flat | hier_static | adaptive
+  model_distribution: cluster  # global | cluster
+  seed: 42
+  run_name: default_run

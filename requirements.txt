@@ -1,0 +1,11 @@
+# Pinned Flower 1.x — use start_simulation API from this release only (do not mix APIs).
+flwr[simulation]==1.28.0
+torch>=2.2.0,<3.0.0
+torchvision>=0.17.0,<1.0.0
+scikit-learn>=1.4.0,<2.0.0
+networkx>=3.2,<4.0
+python-louvain>=0.16
+pandas>=2.1.0,<3.0.0
+matplotlib>=3.8.0,<4.0.0
+pyyaml>=6.0,<7.0
+pytest>=8.0.0,<9.0.0
