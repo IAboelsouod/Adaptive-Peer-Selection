@@ -23,3 +23,7 @@ build/
 .cursor/
 .cursorignore
 .cursorindexingignore
+
+# Thesis sources (keep presentation only)
+thesis/*.pdf
+thesis/*.zip
