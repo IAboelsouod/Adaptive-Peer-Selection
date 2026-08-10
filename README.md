@@ -163,4 +163,4 @@ From `results/master_table.csv` (2 seeds, 10 rounds, 50 clients):
 
 ## License
 
-Academic / coursework use. See course submission guidelines for your institution.
+This project is licensed under the [MIT License](LICENSE).
